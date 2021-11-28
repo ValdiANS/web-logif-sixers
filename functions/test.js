@@ -1,6 +1,10 @@
 // test netlify functions
+
+const { test } = process.env;
+
 exports.handler = async () => {
   console.log('test function ran');
+  console.log(`process.env.test: ${test}`);
 
   const data = {
     name: 'test',
