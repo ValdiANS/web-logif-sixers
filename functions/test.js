@@ -5,6 +5,7 @@ const { test } = process.env;
 exports.handler = async () => {
   console.log('test function ran');
   console.log(`process.env.test: ${test}`);
+  console.log(process.env);
 
   const data = {
     name: 'test',
