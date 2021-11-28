@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +7,21 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body>
+  <body class="bg-green-300">
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app" class="px-8"></div>
+
+    <footer class="bg-white py-3">
+      <p class="text-center">
+        Created by
+
+        <strong class="text-xl uppercase">
+          Sixers
+        </strong>
+      </p>
+    </footer>
     <!-- built files will be auto injected -->
   </body>
 </html>
