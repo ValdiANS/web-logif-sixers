@@ -8,7 +8,7 @@ const {
 } = require('firebase/firestore');
 const Smart = require('./smart');
 const criteriaValue = require('./criteriaValue');
-const { db } = require('./firebase.config');
+const { db } = require('./firebase_config');
 
 exports.handler = async (event) => {
   const { isSmart, kriteria } = event.queryStringParameters;
