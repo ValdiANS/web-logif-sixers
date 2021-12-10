@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>API Docs</title>
+  </head>
+  <body class="bg-green-300">
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <main>
+      <section>
+        <h1>Mendapatkan data makanan pokok</h1>
+        <p>
+          Endpoint: <a href="https://sixers.netlify.app/.netlify/functions/makanan_pokok">https://sixers.netlify.app/.netlify/functions/makanan_pokok</a> <br>
+
+          Request Method : <code>GET</code>
+        </p>
+      </section>
+      
+      <section>
+        <h1>Mendapatkan data makanan pokok yang telah dikalkulasi dengan metode SMART</h1>
+        <p>
+          Endpoint: <a href="https://sixers.netlify.app/.netlify/functions/makanan_pokok">https://sixers.netlify.app/.netlify/functions/makanan_pokok</a> <br>
+          
+          URL Parameter :
+          <ul>
+            <li>isSmart: <code>boolean</code></li>
+            <li>kriteria: <code>bulking/diet/jagaBB</code></li>
+          </ul>
+          
+          Request Method : <code>GET</code> <br>
+
+          Misalnya ketika ingin mendapatkan data makanan pokok yang telah dikalkulasi dengan metode SMART untuk menjaga berat badan, maka URL parameternya bernilai seperti berikut :
+          <ul>
+            <li>isSmart=true</li>
+            <li>kriteria=jagaBB</li>
+          </ul>
+
+          Sehingga URL endpointnya adalah : <br>
+          <a href="https://sixers.netlify.app/.netlify/functions/makanan_pokok?isSmart=true&kriteria=bulking">https://sixers.netlify.app/.netlify/functions/makanan_pokok?isSmart=true&kriteria=bulking</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="bg-white py-3">
+      <p class="text-center">
+        Created by
+
+        <strong class="text-xl uppercase">
+          Sixers
+        </strong>
+      </p>
+    </footer>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
