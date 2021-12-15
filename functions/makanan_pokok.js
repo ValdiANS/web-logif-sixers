@@ -13,6 +13,13 @@ const { db } = require('./firebase_config');
 exports.handler = async (event) => {
   const { isSmart, kriteria } = event.queryStringParameters;
 
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, POST',
+    'Content-Type': 'application/json',
+  };
+
   const makananPokokRef = doc(db, 'makanan', 'makananPokok');
 
   if (event.httpMethod === 'GET') {
@@ -46,9 +53,7 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers,
       body,
     };
   }
@@ -69,9 +74,7 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers,
       body: makananPokokSnap.exists() ? JSON.stringify(successRespon) : { message: 'No Such Document' },
     };
   }
