@@ -20,12 +20,12 @@ exports.handler = async (event) => {
     'Content-Type': 'application/json',
   };
 
-  const makananPokokRef = doc(db, 'makanan', 'makananPokok');
+  const sayurRef = doc(db, 'makanan', 'sayur');
 
   if (event.httpMethod === 'GET') {
-    const makananPokokSnap = await getDoc(makananPokokRef);
+    const sayurSnap = await getDoc(sayurRef);
 
-    let body = makananPokokSnap.exists() ? JSON.stringify(makananPokokSnap.data()) : { message: 'No Such Document' };
+    let body = sayurSnap.exists() ? JSON.stringify(sayurSnap.data()) : { message: 'No Such Document' };
     let smartData;
 
     if (isSmart) {
@@ -39,9 +39,9 @@ exports.handler = async (event) => {
 
           console.log(criteriaValue.custom);
 
-          smartData = new Smart(makananPokokSnap.data().daftarMakanan, criteriaValue.custom);
+          smartData = new Smart(sayurSnap.data().daftarMakanan, criteriaValue.custom);
         } else {
-          smartData = new Smart(makananPokokSnap.data().daftarMakanan, criteriaValue[kriteria]);
+          smartData = new Smart(sayurSnap.data().daftarMakanan, criteriaValue[kriteria]);
         }
 
         body = JSON.stringify(smartData.food);
@@ -59,24 +59,24 @@ exports.handler = async (event) => {
   }
 
   if (event.httpMethod === 'POST') {
-    await updateDoc(makananPokokRef, {
+    await updateDoc(sayurRef, {
       daftarMakanan: arrayUnion(JSON.parse(event.body)),
     });
 
-    const makananPokokSnap = await getDoc(makananPokokRef);
+    const sayurSnap = await getDoc(sayurRef);
 
     console.log(event.body);
 
     const successRespon = {
       error: false,
-      message: `Makanan ${JSON.parse(event.body).nama} berhasil ditambahkan`,
-      data: makananPokokSnap.data(),
+      message: `Sayur ${JSON.parse(event.body).nama} berhasil ditambahkan`,
+      data: sayurSnap.data(),
     };
 
     return {
       statusCode: 200,
       headers,
-      body: makananPokokSnap.exists() ? JSON.stringify(successRespon) : { message: 'No Such Document' },
+      body: sayurSnap.exists() ? JSON.stringify(successRespon) : { message: 'No Such Document' },
     };
   }
 
