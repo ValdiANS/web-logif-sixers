@@ -25,10 +25,24 @@ exports.handler = async (event) => {
   if (event.httpMethod === 'GET') {
     const laukPaukSnap = await getDoc(laukPaukRef);
 
+    const body = laukPaukSnap.exists() ? JSON.stringify(laukPaukSnap.data()) : { message: 'No Such Document' };
+
+    return {
+      statusCode: 200,
+      headers,
+      body,
+    };
+  }
+
+  if (event.httpMethod === 'POST') {
+    let laukPaukSnap = await getDoc(laukPaukRef);
+
     let body = laukPaukSnap.exists() ? JSON.stringify(laukPaukSnap.data()) : { message: 'No Such Document' };
-    let smartData;
+    let successRespon;
 
     if (isSmart) {
+      let smartData;
+
       if (criteriaValue[kriteria]) {
         if (kriteria === 'custom') {
           const { customCriteria } = JSON.parse(event.body);
@@ -36,8 +50,6 @@ exports.handler = async (event) => {
           criteriaValue.custom.forEach((crit) => {
             crit.bobot = customCriteria[crit.nama];
           });
-
-          console.log(criteriaValue.custom);
 
           smartData = new Smart(laukPaukSnap.data().daftarMakanan, criteriaValue.custom);
         } else {
@@ -49,29 +61,23 @@ exports.handler = async (event) => {
         const criteriaError = 'Kriteria yang anda maksud tidak ditemukan';
         body = criteriaError;
       }
+
+      successRespon = JSON.parse(body);
+    } else {
+      await updateDoc(laukPaukRef, {
+        daftarMakanan: arrayUnion(JSON.parse(event.body)),
+      });
+
+      laukPaukSnap = await getDoc(laukPaukRef);
+
+      console.log(event.body);
+
+      successRespon = {
+        error: false,
+        message: `Makanan ${JSON.parse(event.body).nama} berhasil ditambahkan`,
+        data: JSON.parse(body),
+      };
     }
-
-    return {
-      statusCode: 200,
-      headers,
-      body,
-    };
-  }
-
-  if (event.httpMethod === 'POST') {
-    await updateDoc(laukPaukRef, {
-      daftarMakanan: arrayUnion(JSON.parse(event.body)),
-    });
-
-    const laukPaukSnap = await getDoc(laukPaukRef);
-
-    console.log(event.body);
-
-    const successRespon = {
-      error: false,
-      message: `Lauk ${JSON.parse(event.body).nama} berhasil ditambahkan`,
-      data: laukPaukSnap.data(),
-    };
 
     return {
       statusCode: 200,

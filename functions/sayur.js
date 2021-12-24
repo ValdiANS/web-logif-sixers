@@ -25,10 +25,48 @@ exports.handler = async (event) => {
   if (event.httpMethod === 'GET') {
     const sayurSnap = await getDoc(sayurRef);
 
+    const body = sayurSnap.exists() ? JSON.stringify(sayurSnap.data()) : { message: 'No Such Document' };
+    // let smartData;
+
+    // if (isSmart) {
+    //   if (criteriaValue[kriteria]) {
+    //     if (kriteria === 'custom') {
+    //       const { customCriteria } = JSON.parse(event.body);
+
+    //       criteriaValue.custom.forEach((crit) => {
+    //         crit.bobot = customCriteria[crit.nama];
+    //       });
+
+    //       console.log(criteriaValue.custom);
+
+    //       smartData = new Smart(sayurSnap.data().daftarMakanan, criteriaValue.custom);
+    //     } else {
+    //       smartData = new Smart(sayurSnap.data().daftarMakanan, criteriaValue[kriteria]);
+    //     }
+
+    //     body = JSON.stringify(smartData.food);
+    //   } else {
+    //     const criteriaError = 'Kriteria yang anda maksud tidak ditemukan';
+    //     body = criteriaError;
+    //   }
+    // }
+
+    return {
+      statusCode: 200,
+      headers,
+      body,
+    };
+  }
+
+  if (event.httpMethod === 'POST') {
+    let sayurSnap = await getDoc(sayurRef);
+
     let body = sayurSnap.exists() ? JSON.stringify(sayurSnap.data()) : { message: 'No Such Document' };
-    let smartData;
+    let successRespon;
 
     if (isSmart) {
+      let smartData;
+
       if (criteriaValue[kriteria]) {
         if (kriteria === 'custom') {
           const { customCriteria } = JSON.parse(event.body);
@@ -36,8 +74,6 @@ exports.handler = async (event) => {
           criteriaValue.custom.forEach((crit) => {
             crit.bobot = customCriteria[crit.nama];
           });
-
-          console.log(criteriaValue.custom);
 
           smartData = new Smart(sayurSnap.data().daftarMakanan, criteriaValue.custom);
         } else {
@@ -49,29 +85,23 @@ exports.handler = async (event) => {
         const criteriaError = 'Kriteria yang anda maksud tidak ditemukan';
         body = criteriaError;
       }
+
+      successRespon = JSON.parse(body);
+    } else {
+      await updateDoc(sayurRef, {
+        daftarMakanan: arrayUnion(JSON.parse(event.body)),
+      });
+
+      sayurSnap = await getDoc(sayurRef);
+
+      console.log(event.body);
+
+      successRespon = {
+        error: false,
+        message: `Makanan ${JSON.parse(event.body).nama} berhasil ditambahkan`,
+        data: JSON.parse(body),
+      };
     }
-
-    return {
-      statusCode: 200,
-      headers,
-      body,
-    };
-  }
-
-  if (event.httpMethod === 'POST') {
-    await updateDoc(sayurRef, {
-      daftarMakanan: arrayUnion(JSON.parse(event.body)),
-    });
-
-    const sayurSnap = await getDoc(sayurRef);
-
-    console.log(event.body);
-
-    const successRespon = {
-      error: false,
-      message: `Sayur ${JSON.parse(event.body).nama} berhasil ditambahkan`,
-      data: sayurSnap.data(),
-    };
 
     return {
       statusCode: 200,
