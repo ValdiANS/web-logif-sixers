@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="./css/details.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    >
+
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
+
+    <script src="./js/foodDetails.js" defer type="module"></script>
+
+    <title>Food Details</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark shadow">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./images/Brand2.png" alt="brand" />
+        </a>
+        <span class="navbar-text mr-auto justify-content-end"> by Sixers </span>
+        <button
+          class="navbar-toggler ml-auto justify-content-end"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div class="navbar-nav">
+            
+            <a class="nav-link" aria-current="page" href="foodplans.html">
+              <img src="./images/menu-icon/foodplans-calculator.png" alt="foodplans-calculator">
+              Foodplans Calculator
+            </a>
+          
+            <a class="nav-link" href="calc.html">
+              <img src="./images/menu-icon/imt-calculator.png" alt="imt-calculator">
+              IMT Calculator
+            </a>
+          
+            <a class="nav-link active" href="details.html">
+              <img src="./images/menu-icon/food-details.png" alt="food-details.">
+              Food Details
+            </a>
+            
+          </div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <!-- NavBar -->
+
+    <!-- Jumbotron -->
+    <section class="jumbotron jumbotron-fluid text-center pb-5">
+      <div class="container">
+        <h1 class="display-2">
+          Informasi Kandungan Makanan
+        </h1>
+        <p class="pdetails lead font-weight-normal">Kandungan per 100gr</p>
+      </div>
+    </section>
+    <!-- Akhir Jumbotron -->
+
+    <!-- Food Card -->
+
+    <!-- Makanan Pokok -->
+
+    <section class="mb-4">
+      <h3 class="text-center mb-4" id="pokok">Makanan Pokok</h3>
+      <div class="container-fluid">
+        <div id="makananPokokContainer" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-center px-4 px-sm-3">
+          <div class="loading-spinner-container d-flex justify-content-center d-none">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akhir Makanan Pokok -->
+
+    <!-- Lauk Pauk -->
+
+    <section class="mb-4">
+      <h3 class="text-center mb-4" id="lauk">Lauk Pauk</h3>
+      <div class="container-fluid p-5">
+        <div id="laukPaukContainer" class="row row-cols-2 row-cols-md-4 justify-content-center">
+          <div class="loading-spinner-container d-flex justify-content-center d-none">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akhir Lauk Pauk -->
+
+    <!-- Buah -->
+
+    <section class="mb-4">
+      <h3 class="text-center mb-4" id="buah">Buah-buahan</h3>
+      <div class="container-fluid p-5">
+        <div id="buahContainer" class="row row-cols-2 row-cols-md-4 justify-content-center">
+          <div class="loading-spinner-container d-flex justify-content-center d-none">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akhir Buah -->
+
+    <!-- Sayur -->
+
+    <section class="mb-4">
+      <h3 class="text-center mb-4" id="sayur">Sayur-mayur</h3>
+      <div class="container-fluid p-5">
+        <div id="sayurContainer" class="row row-cols-2 row-cols-md-4 justify-content-center">
+          <div class="loading-spinner-container d-flex justify-content-center d-none">
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akhir Sayur -->
+
+    <!-- Akhir Food Card -->
+
+    <!-- Footbar-->
+
+    <nav class="navbar">
+      <div class="container">
+        <span class="navbar-text"> Created by Sixers </span>
+        <a class="navbar-text" href="./about.html">
+          <span class="navbar-text"> About Us </span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Footbar-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <!-- Using bundled (include Popper.js) -->
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

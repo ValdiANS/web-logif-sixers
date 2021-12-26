@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Food</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/png">
+
+  <script src="../bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../js/addFoodPage.js" defer type="module"></script>
+</head>
+<body>
+  
+  <!-- SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+    </symbol>
+    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </symbol>
+  </svg>
+
+  <!-- Navbar -->
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark shadow">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="../images/Brand2.png" alt="brand">
+      </a>
+      <span class="navbar-text mr-auto justify-content-end"> by Sixers </span>
+      <button
+        class="navbar-toggler ml-auto justify-content-end"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="navbar-nav">
+          
+          <a class="nav-link" aria-current="page" href="../foodplans.html">
+            <img src="../images/menu-icon/foodplans-calculator.png" alt="foodplans-calculator">
+            Foodplans Calculator
+          </a>
+        
+          <a class="nav-link" href="../calc.html">
+            <img src="../images/menu-icon/imt-calculator.png" alt="imt-calculator">
+            IMT Calculator
+          </a>
+        
+          <a class="nav-link" href="../details.html">
+            <img src="../images/menu-icon/food-details.png" alt="food-details.">
+            Food Details
+          </a>
+          
+        </div>
+      </div>
+      
+    </div>
+  </nav>
+
+  <!-- NavBar -->
+
+  <main class="container my-5 py-5 px-3 px-md-0">
+    <section class="pt-3">
+      <h1 class="text-center fw-bold fs-1">
+        Add Food
+      </h1>
+
+      <div class="d-flex flex-column flex-md-row gap-3 gap-md-0 align-items-center">
+        <div class="form-data pt-5 pb-3 px-3">
+          <form id="foodForm">
+            <table class="w-100">
+              <tr>
+                <td class="pb-3">
+                  <label for="nama" class="text-white">
+                    Nama
+                  </label>
+                </td>
+                <td class="pb-3 ps-3">
+                  <input type="text" id="nama" class="btn-light  py-1 px-2 rounded-3 border-0 w-100">
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pb-3">
+                  <label for="kalori" class="text-white">
+                    Kalori :
+                  </label>
+                </td>
+                <td class="pb-3 ps-3">
+                  <input type="number" step="0.001" min="0" id="kalori" class="btn-light py-1 px-2 rounded-3 border-0 w-100">
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pb-3">
+                  <label for="karbohidrat" class="text-white">
+                    Karbohidrat :
+                  </label>
+                </td>
+                <td class="pb-3 ps-3">
+                  <input type="number" step="0.001" min="0" id="karbohidrat" class="btn-light py-1 px-2 rounded-3 border-0 w-100">
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pb-3">
+                  <label for="protein" class="text-white">
+                    Protein :
+                  </label>
+                </td>
+                <td class="pb-3 ps-3">
+                  <input type="number" step="0.001" min="0" id="protein" class="btn-light py-1 px-2 rounded-3 border-0 w-100">
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pb-3">
+                  <label for="lemak" class="text-white">
+                    Lemak :
+                  </label>
+                </td>
+                <td class="pb-3 ps-3">
+                  <input type="number" step="0.001" min="0" id="lemak" class="btn-light py-1 px-2 rounded-3 border-0 w-100">
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pb-3">
+                  <label for="imageUrl" class="text-white">
+                    Image Url :
+                  </label>
+                </td>
+                <td class="pb-3 ps-3">
+                  <input type="text" id="imageUrl" class="btn-light py-1 px-2 rounded-3 border-0 w-100">
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pb-3">
+                  <label for="kategori" class="text-white">
+                    Kategori :
+                  </labe>
+                </td>
+                <td class="pb-3 ps-3">
+                  <select type="text" id="kategori" class="px-2 border-0">
+                    <option value="makananPokok" selected>Makanan Pokok</option>
+                    <option value="laukPauk">Lauk Pauk</option>
+                    <option value="buah">Buah-buahan</option>
+                    <option value="sayur">Sayur</option>
+                  </select>
+                </td>
+              </tr>
+
+            </table>
+            
+            <div class="d-flex justify-content-end mt-2 mb-3 gap-2">
+              <button type="reset" class="py-2 px-4 border-0 bg-danger btn btn-danger">
+                Reset
+              </button>
+              
+              <button type="submit" class="py-2 px-4 border-0 bg-white btn btn-light">
+                Submit
+              </button>
+            </div>
+
+
+            <div class="loading-spinner-container d-flex justify-content-center d-none">
+              <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            
+            <div class="error-msg-container alert alert-danger d-flex align-items-center mt-2 d-none" role="alert">
+              <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+              <div id="errorMsg" class="pe-3">
+
+              </div>
+            </div>
+
+            <div class="success-msg-container alert alert-success d-flex align-items-center d-none" role="alert">
+              <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+              <div>
+                Data Added
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-preview flex-grow-1 w-100">
+          <h2 class="text-center">
+            Card Preview
+          </h2>
+
+          <div class="px-4 px-sm-3 d-flex justify-content-center">
+            <div class="card shadow w-100">
+              <img
+                src="https://via.placeholder.com/300?text=Food+Thumbnail+Preview"
+                class="card-img-top"
+                alt="Food Thumbnail Image"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Preview Name</h5>
+                <p class="nilai-kalori card-subtitle mb-2">Kalori : 0</p>
+                <p class="nilai-karbohidrat card-subtitle mb-2">Karbohidrat : 0</p>
+                <p class="nilai-protein card-subtitle mb-2">Protein : 0</p>
+                <p class="nilai-lemak card-subtitle mb-2">Lemak : 0</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  
+</body>
+</html>

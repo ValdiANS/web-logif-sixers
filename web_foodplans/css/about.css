@@ -1,0 +1,13 @@
+main {
+  font-family: "Poppins", sans-serif;
+}
+
+.card .card-title {
+  font-weight: 600;
+}
+
+.card img {
+  height: 15em;
+  object-fit: cover;
+  object-position: center;
+}

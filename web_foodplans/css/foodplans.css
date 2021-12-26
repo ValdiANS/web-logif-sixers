@@ -1,0 +1,304 @@
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+section {
+  padding-top: 1rem;
+}
+
+/*Jumbotron*/
+
+.jumbotron {
+  background-color: rgb(41, 154, 139);
+  background-size: cover;
+  padding-top: 8rem;
+  height: auto;
+  width: 100%;
+  color: white;
+}
+
+.jumbotron .display-1 {
+  padding-top: 2rem;
+  font-size: 54px;
+  font-weight: 900;
+}
+
+.jumbotron .display-2 {
+  font-size: 54px;
+  font-weight: 900;
+}
+
+.jumbotron .pdetails {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/*Akhir Jumbotron*/
+
+/*Navbar*/
+.navbar {
+  background-color: #00bfa6;
+}
+
+.navbar .navbar-nav .nav-link {
+  font-size: medium;
+  color: white;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: yellow;
+  font-size: large;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #ffffff;
+}
+
+.navbar .navbar-brand img {
+  color: white;
+  font-size: 30px;
+  height: 45px;
+}
+
+.navbar .navbar-text {
+  color: white;
+  font-size: 17px;
+}
+/*Akhir Navbar*/
+
+/* Form */
+
+.radiotext {
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+}
+
+.container .row .col-md-4 .container .h3 {
+  font-size: 40;
+  color: white;
+  font-weight: 600;
+}
+
+.container .row .custombg {
+  background-color: #00bfa6;
+  height: fit-content;
+  position: sticky;
+  top: 5.5em;
+  left: 0;
+
+  border-radius: 5px;
+}
+
+form button[type="submit"] {
+  box-shadow:  0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+form button[type="submit"]:disabled {
+  background-color: #E5E5E5 !important;
+  border: 2px solid rgb(138, 138, 138) !important;
+}
+
+/* akhir form*/
+
+.result h3 {
+  font-weight: 600;
+}
+
+.result h3.rekomendasi {
+  width: fit-content;
+  background-color: #00BFA6;
+  border-radius: 5px;
+}
+
+/*Card*/
+.container-fluid {
+  margin-left: auto;
+  margin-right: auto;
+  /* padding: 3rem; */
+}
+
+/* .container-fluid .row .col {
+  padding: 0rem 2rem 2rem 2rem;
+} */
+
+.card {
+  border-radius: 5px;
+}
+
+.card img {
+  height: 10rem;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 5px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card {
+  width: auto;
+  height: auto;
+}
+
+.card .rank-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #fff;
+
+  border-radius: 5px;
+}
+
+.rank-info.first {
+  background-color: #FFD700;
+}
+
+.rank-info.second {
+  background-color: #C0C0C0;
+}
+
+.rank-info.third {
+  background-color: #B87333;
+}
+
+.card .nilai-akhir {
+  font-weight: 600;
+}
+
+/*Card*/
+
+/* Mobile Responsive */
+@media only screen and (max-width: 480px) {
+  /* Navbar */
+  .navbar .navbar-nav .nav-link {
+    font-size: small;
+    color: white;
+  }
+  .navbar .navbar-nav .nav-link:hover {
+    color: yellow;
+    font-size: medium;
+  }
+
+  .navbar .navbar-brand img {
+    color: white;
+    font-size: 20px;
+    height: 25px;
+  }
+
+  .navbar .navbar-text {
+    color: white;
+    font-size: 15px;
+  }
+  /* Akhir Navbar */
+
+  /* Title */
+
+  .jumbotron .display-2 {
+    font-size: 30px;
+    font-weight: 900;
+  }
+
+  .jumbotron .pdetails {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* AKhir title */
+
+  /* Form */
+
+  /* .container .row {
+    padding: 0rem 2rem 2rem 2rem;
+    font-size: 12px;
+  } */
+
+  .radiotext {
+    /* font-size: 12px; */
+    font-weight: 500;
+    color: white;
+  }
+
+  .input-group .input-group-sm .container .row .col-md-4 .container h3 {
+    /* font-size: 19px; */
+    color: white;
+    font-weight: 600;
+  }
+
+  /* Akhhir form */
+
+  /* Card */
+  /* .container-fluid .row .col {
+    padding: 5px;
+  } */
+
+  .container-fluid {
+    padding-top: 1rem;
+  }
+
+  .card-subtitle {
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .card img {
+    width: auto;
+    max-height: 5rem;
+  }
+
+  .rank-info {
+    font-size: 0.7rem;
+  }
+
+  /* Akhir card */
+}
+
+/* Loading Spinner */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  margin: 8px;
+  border: 6px solid #000000;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #00bfa6 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,204 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+section {
+  padding-top: 1rem;
+}
+
+/* font responsive size */
+
+@media only screen and (max-width: 50%) {
+  .jumbotron .display-1 {
+    font-size: 27px;
+  }
+}
+
+/* akhir font responsive size */
+
+/*Jumbotron*/
+
+.jumbotron {
+  /* background-color: rgb(41, 154, 139); */
+  background-size: cover;
+  padding-top: 8rem;
+  width: 100%;
+  color: white;
+}
+
+.jumbotron .display-1 {
+  padding-top: 2rem;
+  font-size: 54px;
+  font-weight: 900;
+}
+
+.jumbotron .display-2 {
+  font-size: 54px;
+  font-weight: 900;
+}
+
+.jumbotron .pdetails {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.jumbotron .hello {
+  font-size: 48;
+  font-weight: 600;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+/*Akhir Jumbotron*/
+
+/*Navbar*/
+.navbar {
+  background-color: #00bfa6;
+}
+
+.navbar .navbar-nav .nav-link {
+  font-size: medium;
+  color: white;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: yellow;
+  font-size: large;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #ffffff;
+}
+
+.navbar .navbar-brand img {
+  color: white;
+  font-size: 30px;
+  height: 45px;
+}
+
+.navbar .navbar-text {
+  color: white;
+  font-size: 17px;
+}
+/*Akhir Navbar*/
+
+/* form */
+
+form {
+  width: 100%;
+}
+
+.gender .gender-caption {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.radio-input label {
+  cursor: pointer;
+}
+
+.text-input div label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.text-input div input {
+  border: 2px solid #000000;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+form .hitung {
+  border-radius: 10000px;
+  border: none;
+  background-color: #00BFA6;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 5px 0;
+  width: 100%;
+  max-width: 400px;
+  transition: .2s ease-in;
+}
+
+form .hitung:hover {
+  background-color: rgb(6, 136, 119);
+}
+
+/* Akhir form */
+
+.calculator-img-container {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  z-index: -10;
+}
+
+.calculator-img {
+  max-width: 250px;
+  filter: blur(2px);
+}
+
+.imt-result-container {
+  padding-top: 7rem;
+  /* padding-left: 5rem;
+  padding-right: 5rem; */
+}
+
+.imt-result {
+  width: 100%;
+  border: 5px solid #00BFA6;
+  border-radius: 15px;
+}
+
+.imt-result .btn-success {
+  background-color: #00BFA6;
+}
+
+/* Mobile Responsive */
+@media only screen and (max-width: 480px) {
+  /* Navbar */
+  .navbar .navbar-nav .nav-link {
+    font-size: small;
+    color: white;
+  }
+  .navbar .navbar-nav .nav-link:hover {
+    color: yellow;
+    font-size: medium;
+  }
+
+  .navbar .navbar-brand img {
+    color: white;
+    font-size: 20px;
+    height: 25px;
+  }
+
+  .navbar .navbar-text {
+    color: white;
+    font-size: 15px;
+  }
+  /* Akhir Navbar */
+
+  /* Title */
+
+  .jumbotron .display-2 {
+    padding: 4;
+    font-size: 30px;
+    font-weight: 900;
+  }
+
+  .jumbotron .pdetails {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* AKhir title */
+}
+/* Akhir Mobile Responsive */
